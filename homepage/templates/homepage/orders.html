@@ -1,0 +1,10 @@
+{% extends 'homepage/base_visitor.html' %}
+
+{% block body %}
+    <h1>My Orders</h1>
+    <ul>
+        {% for order in user.order_set.all %}
+        <li>{{ order }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

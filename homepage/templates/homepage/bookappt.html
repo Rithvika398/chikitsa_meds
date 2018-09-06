@@ -1,0 +1,44 @@
+{% extends 'homepage/base_visitor.html' %}
+{% block title %}Book an Appointment{% endblock %}
+{% block albums_active %}active{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-sm-12 col-md-7">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>Book an Appointment</h3>
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+                    <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% include 'homepage/form_template.html' %}
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-5">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>What is Chikitsa?</h3>
+                    <p>Chikitsa is an app that allows you to book appointments of several doctors all at one place. It also allows you to purchase medicines online!</p>
+                    <h3>How do I book an appointment?</h3>
+                    <p>First, register on our site by going to the signup page. If you are already a registered user, then login to your account.Once you are logged in,book an appointment by filling in the necessary fields on this page </p>
+                                    </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
